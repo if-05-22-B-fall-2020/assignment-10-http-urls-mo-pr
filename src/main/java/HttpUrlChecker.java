@@ -21,3 +21,13 @@
  * PROVIDED HEREUNDER IS PROVIDED "AS IS". HTBLA LEONDING HAS NO OBLIGATION
  * TO PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
  */
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class HttpUrlChecker {
+    static Matcher getMatcher(String http){
+        Pattern patt = Pattern.compile("^(http|https)://(www\\.)?[^-]+(-[^-]+)?(\\.[a-z]+)+");
+        return patt.matcher(http);
+    }
+}
